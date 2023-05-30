@@ -1,0 +1,44 @@
+<div class="header">
+  <%= link_to "<", user_path(current_user), class:"nav-link" %>
+  <h2>Transaction</h2>
+  <i class="fa-solid fa-bars" onclick="redirectToMenu()"></i>
+</div>
+<div class="exchange-title">
+  <p>Name: <%= @group.name %></p>
+  <% amount = 0 %>
+  <% @group.exchanges.each do |exchange| %>
+    <% amount = amount + exchange.amount %>
+  <% end %>
+  <p>Total amount: <span><%= amount %> $<span></p>
+</div>
+<div class="exchange-body">
+  <% @group.exchanges.each do |exchange| %>
+    <div class="exchange-card">
+      <div class="exchange-img">
+        <%= image_tag url_for(@group.icon) if @group.icon.attached? %>
+        <%= image_tag "default.png" unless @group.icon.attached? %>
+      </div>
+      <div class="exchange-details">
+        <div class="line-1">
+          <p><%= exchange.name %></p>
+          <p>$<%= exchange.amount %></p>
+        </div>
+        <div class="line-2">
+          <p><%= exchange.created_at.strftime("%e %B %Y at %l:%M %p") %></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<div class="buttons">
+<button onclick="createTransactionFunction(<%=@group.id%>)" class="btn">Add a new transaction</button>
+</div>
+<script>
+function createTransactionFunction(id) {
+    window.location.href = "/transactions/new/" + id
+  }
+  function redirectToMenu() {
+     window.location.href = "/menu"
+  }
+</script>

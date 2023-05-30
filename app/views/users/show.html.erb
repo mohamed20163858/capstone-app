@@ -1,0 +1,32 @@
+<div class="header">
+  <h2>Categories</h2>
+  <i class="fa-solid fa-bars" onclick="redirectToMenu()"></i>
+</div>
+<div class='cat-cards'>
+<% current_user.groups.each do |group| %>
+  <div class='cat-card' onclick="seeTransactionsFunction(<%=@user.id%>, <%=group.id%>)">
+    <%= image_tag url_for(group.icon) if group.icon.attached? %>
+    <%= image_tag "default.png" unless group.icon.attached? %>
+    <p>Name: <%= group.name %></p>
+    <% amount = 0 %>
+    <% group.exchanges.each do |exchange| %>
+      <% amount = amount + exchange.amount %>
+    <% end %>
+    <p>Total amount: <%= amount %></p>
+  </div>
+<% end %>
+</div>
+<div class="buttons">
+<button onclick="createCategoryFunction()" class="btn">Add a new category</button>
+</div>
+<script>
+  function seeTransactionsFunction(user_id, group_id) {
+     window.location.href = '/user/' + user_id + '/transactions/' + group_id;
+  }
+  function createCategoryFunction() {
+    window.location.href = "/categories/new"
+  }
+  function redirectToMenu() {
+     window.location.href = "/menu"
+  }
+</script>
