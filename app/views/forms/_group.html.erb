@@ -1,0 +1,22 @@
+<div class="header">
+  <%= link_to "<", user_path(current_user), class:"nav-link" %>
+  <h2>Add a new category</h2>
+  <i class="fa-solid fa-bars" onclick="redirectToMenu()"></i>
+</div>
+<%= form_with model: group do |form| %>
+  <div class="name">
+    <%= form.text_field :name, placeholder: 'Name' %>
+  </div>
+  <div class="icon">
+    <%= form.label :icon %><br>
+    <%= form.file_field :icon %>
+  </div>
+  <div class="buttons">
+    <%= form.submit "Save", class:"btn" %>
+  </div>
+<% end %>
+<script>
+function redirectToMenu() {
+     window.location.href = "/menu"
+  }
+</script>

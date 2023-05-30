@@ -13,3 +13,287 @@
  *= require_tree .
  *= require_self
  */
+
+:root {
+  --main-color: #3778c2;
+  --second-color: #5fb523;
+  --text-color: #434b54;
+  --white-color: #fff;
+  --background-color: #f5f6f8;
+  --bold-weight: 800;
+  --light-weight: 300;
+}
+
+body {
+  font-family: 'Proxima Nova', sans-serif;
+  color: var(--text-color);
+  font-size: 15px;
+  background-color: var(--background-color);
+}
+
+.container {
+  box-sizing: border-box;
+  margin: 10px 20px;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 10px;
+}
+
+.card .info {
+  border: 3px solid black;
+  width: 70vw;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card .info p {
+  align-self: flex-end;
+}
+
+.card .img {
+  width: 30vw;
+  text-align: center;
+}
+
+.posts {
+  display: flex;
+  flex-direction: column;
+}
+
+.posts button {
+  width: fit-content;
+  align-self: center;
+  padding: 10px;
+}
+
+.bio,
+.post,
+.comments {
+  border: 3px solid black;
+  display: flex;
+  flex-direction: column;
+}
+
+.hidden {
+  display: none;
+}
+
+.post .reactions {
+  align-self: flex-end;
+}
+
+nav div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--main-color);
+  padding: 0 20px;
+}
+
+nav a {
+  color: var(--white-color);
+  text-decoration: none;
+}
+
+.navbar-nav {
+  padding: 0;
+  list-style: none;
+  display: flex;
+}
+
+.nav-item {
+  margin-left: 10px;
+}
+
+.notice {
+  background-color: green;
+  color: var(--white-color);
+}
+
+.alert {
+  background-color: red;
+  color: var(--white-color);
+}
+
+input[type=email],
+input[type=text],
+input[type=password],
+.full-width,
+textarea {
+  width: 100%;
+}
+
+textarea {
+  height: 20vh;
+}
+
+.field {
+  margin-bottom: 20px;
+}
+
+.field label {
+  display: block;
+}
+
+.centrialize,
+.buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.centrialize img {
+  width: 90vw;
+}
+
+.cat-card {
+  background-color: var(--white-color);
+  height: 150px;
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+}
+
+.exchange-card {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  background-color: var(--white-color);
+  width: 90%;
+}
+
+.exchange-card img {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+}
+
+.exchange-img {
+  padding: 10px;
+}
+
+.exchange-details {
+  width: 80%;
+  font-size: 15px;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.exchange-card .line-1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.exchange-card .line-1 p:first-of-type,
+.exchange-card .line-2 {
+  font-weight: var(--light-weight);
+}
+
+.exchange-card .line-1 p:last-of-type {
+  font-weight: var(--bold-weight);
+}
+
+.cat-card img {
+  width: 50%;
+  height: 50%;
+  border-radius: 100%;
+}
+
+.cat-cards,
+.exchange-body {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 200px;
+}
+
+.exchange-title {
+  width: 100%;
+  background-color: var(--white-color);
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.exchange-title p span {
+  font-weight: var(--bold-weight);
+}
+
+.btn {
+  text-decoration: none;
+  background-color: var(--second-color);
+  color: var(--white-color);
+  border: 3px solid var(--white-color);
+  margin-bottom: 10px;
+  width: 90%;
+  text-align: center;
+  padding: 10px;
+  font-size: 12px;
+  box-sizing: border-box;
+}
+
+.splash {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 95vh;
+}
+
+.buttons {
+  background-color: var(--second-color);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--main-color);
+  color: var(--white-color);
+  margin-bottom: 20px;
+}
+
+.header a {
+  color: var(--white-color);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 5px;
+}
+
+.header h2 {
+  width: 90%;
+  text-align: center;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menu a {
+  text-decoration: none;
+  margin-bottom: 20px;
+  font-size: 20px;
+  color: var(--text-color);
+}
+
+i {
+  padding-right: 10px;
+}

@@ -1,0 +1,35 @@
+<div class="header">
+  <%= link_to "<", "/user/#{current_user.id}/transactions/#{@group.id}", class:"nav-link"%>
+  <h2>Add a new transaction</h2>
+  <i class="fa-solid fa-bars" onclick="redirectToMenu()"></i>
+</div>
+<%= form_with model: exchange do |form| %>
+  <div class="name">
+    <%= form.text_field :name, placeholder: 'Name' %>
+  </div>
+  <div class="amount">
+    <%= form.number_field :amount, min: 0, placeholder: 'Amount' %>
+    <span>$</span>
+  </div>
+  <div class="current-group">
+    <label>Cureent assoicated Category</label>
+    <input type="text" name="current-group" value="<%=@group.name%>" disabled="disabled">
+  </div>
+  <div class="other-group">
+    <label>Want to include other Categories as well?</label>
+    <% current_user.groups.each do |group| %>
+      <% if group.id != @group.id %>
+      <%= check_box_tag "group_ids[]", group.id %>
+      <%= group.name %>
+      <% end %>
+    <% end %>
+  </div>
+   <div class="buttons">
+    <%= form.submit "Save", class:"btn" %>
+   </div>
+<% end %>
+<script>
+function redirectToMenu() {
+     window.location.href = "/menu"
+  }
+</script>
