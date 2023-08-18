@@ -69,7 +69,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Demo](https://mysite-eb2a.onrender.com/)
+- [Demo](https://nazamly-qx3o.onrender.com)
 
 
 <p align="right">([back to top](#readme-top))</p>
