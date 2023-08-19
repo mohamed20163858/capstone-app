@@ -5,6 +5,10 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+GroupExchangeRelation.destroy_all 
+Exchange.destroy_all 
+Group.destroy_all
+User.destroy_all
 me = User.create(name: 'mohamed abd el mohsen saleh', email: 'mohamed20163858@gmail.com', password: 'momo123456')
 exchange1 = Exchange.create(name: 'mac fastfood', author: me, amount: 30)
 cat1 = Group.create(name: 'Gift Credit', author: me)

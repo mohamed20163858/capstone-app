@@ -1,19 +1,18 @@
 databases:
-  - name: budget_app_production
-    databaseName: budget_app_production_bykx
-    user: budget_app_production_bykx_user
-    password: bm7zfH2lzdY98Zynberr7vqoQNJTXDLp
+  - name: mysite
+    databaseName: mysite
+    user: mysite
 
 services:
   - type: web
-    name: nazamly
-    env: ruby
+    name: mysite
+    runtime: ruby
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec puma -C config/puma.rb"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: budget_app_production
+          name: mysite
           property: connectionString
       - key: RAILS_MASTER_KEY
         sync: false
