@@ -21,7 +21,7 @@
 </div>
 <script>
   function seeTransactionsFunction(e) {
-     window.location.href = '/user/' + e.user_id + '/transactions/' + e.group_id;
+     window.location.href = '/user/' + e.getAttribute('user_id') + '/transactions/' + e.getAttribute('group_id');
   }
   function createCategoryFunction() {
     window.location.href = "/categories/new"
