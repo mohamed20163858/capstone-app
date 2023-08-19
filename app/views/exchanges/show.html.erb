@@ -32,11 +32,11 @@
 </div>
 
 <div class="buttons">
-<button onclick="createTransactionFunction(<%=@group.id%>)" class="btn">Add a new transaction</button>
+<button id="<%=@group.id%>" onclick="createTransactionFunction(this)" class="btn">Add a new transaction</button>
 </div>
 <script>
-function createTransactionFunction(id) {
-    window.location.href = "/transactions/new/" + id
+function createTransactionFunction(e) {
+    window.location.href = "/transactions/new/" + e.id
   }
   function redirectToMenu() {
      window.location.href = "/menu"
